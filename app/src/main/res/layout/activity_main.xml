@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Panjang"/>
+        android:text="@string/panjang"/>
 
     <EditText
         android:id="@+id/edt_panjang"
@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lebar"/>
+        android:text="@string/lebar"/>
 
     <EditText
         android:id="@+id/edt_lebar"
@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tinggi"/>
+        android:text="@string/tinggi"/>
 
     <EditText
         android:id="@+id/edt_tinggi"
@@ -45,10 +45,14 @@
         android:id="@+id/btn_hitung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hitung"/>
+        android:text="@string/hitung"/>
 
     <TextView
         android:id="@+id/tv_hasil"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/hasil"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 </LinearLayout>
