@@ -21,14 +21,23 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        edtPanjang=findViewById(R.id.edt_panjang)
-        edtLebar= findViewById(R.id.edt_lebar)
-        edtTinggi= findViewById(R.id.edt_tinggi)
-        btnHitung= findViewById(R.id.btn_hitung)
-        tvHasil= findViewById(R.id.tv_hasil)
+        edtPanjang = findViewById(R.id.edt_panjang)
+        edtLebar = findViewById(R.id.edt_lebar)
+        edtTinggi = findViewById(R.id.edt_tinggi)
+        btnHitung = findViewById(R.id.btn_hitung)
+        tvHasil = findViewById(R.id.tv_hasil)
 
         btnHitung.setOnClickListener(this)
+
+        if (savedInstanceState != null) {
+            val result = savedInstanceState.getString(STATE_RESULT) as String
+            tvHasil.text = result
+        }
     }
+    override fun onSaveInstanceState(outState: Bundle) {
+            super.onSaveInstanceState(outState)
+            outState.putString(STATE_RESULT, tvHasil.text.toString())
+        }
 
     override fun onClick(v: View) {
         if (v.id == R.id.btn_hitung){
@@ -83,5 +92,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         } catch (e:NumberFormatException){
             null
         }
+    }
+
+    companion object {
+        private const val STATE_RESULT = "state_result"
     }
 }
